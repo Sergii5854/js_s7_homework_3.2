@@ -1,20 +1,20 @@
 // ///////////////////////////
 // v1
 // ///////////////////////////
- console.info("v1.1");
+ console.info("v1.1")
 
  // beginning
 function Tamagochi(firstName, lastName) {
-		this.firstName = firstName || 'First Name';
-		this.lastName = lastName || 'Second Name';
+		this.firstName = firstName || 'Dragon';
+		this.lastName = lastName || 'IceBorn';
 		this.age =  2;
 		var power =  10;
 		var speed =  3;
 		var feed = 10
-		var sleep = false ;
-		var isDead = false;
+		var sleep = false 
+		var isDead = false
 		
-		var shoutTimes = 0;		
+		var shoutTimes = 0
 
     this.shout = function(word) {
         shoutTimes++;
@@ -43,8 +43,26 @@ function Tamagochi(firstName, lastName) {
     		)
     }
 
+    var help = function(){
+    	console.group('help')
+    	console.log('.help()')
+    	console.log('.go_to_gym() ')
+    	console.log('.go_to_lanch()' )
+    	console.log()
+    	console.log()
+    	console.log()
+    	console.log()
+    	console.log()
+    	console.log()
+    	console.log()
+    	console.groupEnd()
+
+    }
+	help();
 
 }
+
+
 
 
 
