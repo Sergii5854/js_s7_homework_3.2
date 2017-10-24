@@ -7,7 +7,12 @@
 function Tamagochi(firstName, lastName) {
 		this.firstName = firstName || 'First Name';
 		this.lastName = lastName || 'Second Name';
-		var shoutTimes = 0;
+		this.age =  2;
+		this.power =  10;
+		this.speed =  3;
+		this.sleep = false ;
+		this.isDead = false;
+		var shoutTimes = 0;		
 
     this.shout = function(word) {
         shoutTimes++;
@@ -27,4 +32,6 @@ Vasya.shout('Ky');
 console.log('Vasya.getShoutTimes', Vasya.getShoutTimes());
 
 var Petya = new Tamagochi('Petya', 'Peshkin');
+Petya.shout('Ri');
+Petya.shout('Ky');
 console.log('Petya.getShoutTimes', Petya.getShoutTimes());
