@@ -49,6 +49,29 @@ function Tamagochi(firstName, lastName) {
             console.log("Z - z - z - Zzz")
         )
     }
+    this.wake_up = function(){
+         console.warn(" You have 10 secon to shout your volume, or wear earphones ")
+         setTimeout(function(){
+            console.log("Good Morning World, Hello World  ");
+             
+           play_audio('play')
+
+                setTimeout(function(){
+                    console.log('Good Morning World, Hello World');
+                     
+                  play_audio('stop')
+                  console.info(" ok, I am wake up ")
+                    }, 20000);
+            }, 10000);     
+
+
+        return (
+            sleap = false,
+            console.info(" no , no , no ")
+
+        )
+    }
+
 
     var help = function(){
     	console.group('help')
@@ -56,12 +79,12 @@ function Tamagochi(firstName, lastName) {
     	console.log('.go_to_gym() ')
     	console.log('.go_to_lanch()' )
     	console.log('.go_to_sleap()')
+    	console.log('.wake_up() - before do this, please shout your volume, or earphones !!! ')
+    	console.log('  ')
     	console.log()
     	console.log()
     	console.log()
-    	console.log()
-    	console.log()
-    	console.log()
+    	console.log('getShoutTimes() ')
     	console.groupEnd()
 
     }
@@ -70,6 +93,20 @@ function Tamagochi(firstName, lastName) {
 }
 
 
+function play_audio(task) {
+    var audio = new Audio('1.mp3');
+      if(task === 'play'){
+           audio.play();
+      }
+      if(task == 'stop'){
+          
+           audio.pause()
+           audio.currentTime = 0
+           audio = null  
+           console.log('not stopble :(')
+
+      }
+ }  
 
 
 
