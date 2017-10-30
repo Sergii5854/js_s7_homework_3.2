@@ -2,6 +2,7 @@
 // v1
 // ///////////////////////////
  console.info("v1.1")
+  var audio;
 
  // beginning
 function Tamagochi(firstName, lastName) {
@@ -25,7 +26,7 @@ function Tamagochi(firstName, lastName) {
         return shoutTimes;
     };
 
-    this.go_to_gym = function(){
+    this.goToGym = function(){
     	return (
     		power += 3,
 			speed += 1,
@@ -34,7 +35,7 @@ function Tamagochi(firstName, lastName) {
 		)
     }
 
-    this.go_to_lanch = function(){
+    this.goToLanch = function(){
     	return (
     		power -= 2,
     		speed -= 2,
@@ -43,26 +44,40 @@ function Tamagochi(firstName, lastName) {
     	)
     }
 
-    this.go_to_sleap = function(){
+    this.goToSleap = function(){
+        console.log("Please some lullaby  ");
+
+        setTimeout(function(){
+        console.log("ok, you favorite ");
+          audio = document.getElementById('go_to_sleap');  
+          play_audio('play' , audio)
+
+          setTimeout(function(){
+            play_audio('stop', audio)
+            console.log("Z - z - z - Zzz")
+          }, 40000);
+        }, 1000);     
+
+
       return (
           sleap = true,
-          console.log("Z - z - z - Zzz")
+          console.log("It's graite")
       )
     }
-    this.wake_up = function(){
-         console.warn(" You have 10 secon to shout your volume, or wear earphones ")
+    this.wakeUp = function(){
+         console.warn(" You have 2 secon to shout your volume, or wear earphones ")
          setTimeout(function(){
-            console.log("Good Morning World, Hello World  ");
-             
-           play_audio('play')
+          console.log("Good Morning World, Hello World  ");
+          audio = document.getElementById('wake_up');  
+         play_audio('play' , audio)
 
-                setTimeout(function(){
-                    console.log('Good Morning World, Hello World');
-                     
-                  play_audio('stop')
-                  console.info(" ok, I am wake up ")
-                    }, 2000);
-            }, 1000);     
+            setTimeout(function(){
+                console.log('Good Morning World, Hello World');
+              var audio = document.getElementById('wake_up');
+              play_audio('stop', audio)
+              console.info(" ok, I am wake up ")
+                }, 20000);
+        }, 2000);     
 
 
         return (
@@ -76,10 +91,10 @@ function Tamagochi(firstName, lastName) {
     var help = function(){
     	console.group('help')
     	console.log('.help()')
-    	console.log('.go_to_gym() ')
-    	console.log('.go_to_lanch()' )
-    	console.log('.go_to_sleap()')
-    	console.log('.wake_up() - before do this, please shout your volume, or earphones !!! ')
+    	console.log('.goToGym() ')
+    	console.log('.goToLanch()' )
+    	console.log('.goToSleap()')
+    	console.log('.wakeUp() - before do this, please shout your volume, or earphones !!! ')
     	console.log('  ')
     	console.log()
     	console.log()
@@ -93,18 +108,15 @@ function Tamagochi(firstName, lastName) {
 }
 
 
-function play_audio(task) {
-    var audio = document.getElementById('wake_up');
+function play_audio(task , audio) {
+      audio;
       if(task === 'play'){
            audio.play();
       }
-      if(task == 'stop'){
-          
-           audio.pause()
-           audio.trigger('pause');
-           audio = null  
-           console.log('not stopble :(')
-
+      if(task == 'stop'){          
+         audio.pause()         
+         audio = null  
+         console.log('work now : ) ')
       }
  }  
 
