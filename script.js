@@ -43,11 +43,11 @@ function Tamagochi(firstName, lastName) {
     	)
     }
 
-        this.go_to_sleap = function(){
-        return (
-            sleap = true,
-            console.log("Z - z - z - Zzz")
-        )
+    this.go_to_sleap = function(){
+      return (
+          sleap = true,
+          console.log("Z - z - z - Zzz")
+      )
     }
     this.wake_up = function(){
          console.warn(" You have 10 secon to shout your volume, or wear earphones ")
@@ -61,8 +61,8 @@ function Tamagochi(firstName, lastName) {
                      
                   play_audio('stop')
                   console.info(" ok, I am wake up ")
-                    }, 20000);
-            }, 10000);     
+                    }, 2000);
+            }, 1000);     
 
 
         return (
@@ -94,14 +94,14 @@ function Tamagochi(firstName, lastName) {
 
 
 function play_audio(task) {
-    var audio = new Audio('1.mp3');
+    var audio = document.getElementById('wake_up');
       if(task === 'play'){
            audio.play();
       }
       if(task == 'stop'){
           
            audio.pause()
-           audio.currentTime = 0
+           audio.trigger('pause');
            audio = null  
            console.log('not stopble :(')
 
