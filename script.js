@@ -88,7 +88,7 @@ function Tamagochi(firstName, lastName) {
     }
 
 
-    var help = function(){
+    this.help = function(){
     	console.group('help')
     	console.log('.help()')
     	console.log('.goToGym() ')
@@ -103,9 +103,9 @@ function Tamagochi(firstName, lastName) {
     	console.groupEnd()
 
     }
-	help();
 
-}
+
+} //Tamagochi end
 
 
 function play_audio(task , audio) {
@@ -122,7 +122,10 @@ function play_audio(task , audio) {
 
 
 
+var tamagochiName  = prompt('give first name name to Tamaguchi')
+var tamagochiLastName  = prompt('give last name name to Tamaguchi')
 
+var tamagochi = new Tamagochi(tamagochiName, tamagochiLastName)
 
 var Vasya = new Tamagochi('Vasya', 'Pupkin');
 Vasya.shout('Ky');
