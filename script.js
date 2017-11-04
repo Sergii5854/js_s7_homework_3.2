@@ -12,6 +12,10 @@ function Tamagochi(firstName, lastName, age, sleep) {
   var power = 10
   var speed = 3
   var feed = 10
+  var intelligence = 6
+  var endurance = 4
+  var spirituality = 8 
+  
   this.sleep = '' || 'not sleep'
   this.isDead = false
 
@@ -85,6 +89,29 @@ function Tamagochi(firstName, lastName, age, sleep) {
 
           )
       }
+
+      this.goWatchTV = function () {
+        this.random()
+          return (
+              power -= 1,
+                speed -= 1,
+                intelligence -= 2,
+                endurance -= 1,
+                spirituality -= 1
+                console.log('What a strange feeling that something has changed but I do not understand what')
+          )
+      }
+
+    this.goToLibrary = function () {
+        this.random()
+          return (
+            intelligence += 3,
+            feed -= 1,
+            spirituality += 1
+            console.log('Very good now, ' + this.firstName + ' your intelligence is : "' + intelligence + '"' + ' your spirituality is : "' + spirituality + '"' + ' but your feed is : "' + feed + '"')
+          )
+      }
+
   } else {
     console.log('now your tamagochi sleep if you want to play you need wakeup ')
     console.log('tamagochi.wakeUp() - wakeup tamagochi ')
@@ -126,6 +153,10 @@ function Tamagochi(firstName, lastName, age, sleep) {
       console.log('tamagochi.lastN()   - ask tamagochi last name  ')
       console.log('tamagochi.setAge() - set new age to your tamagochi')
       console.log('tamagochi.random() - you want play')
+       console.log('tamagochi.goToLibrary() - visit the library')
+        console.log('tamagochi.goWatchTV() - "have a rest" ')
+         console.log('tamagochi.random() - you want play')
+          console.log('tamagochi.random() - you want play')
       console.log('getShoutTimes() ')
       console.groupEnd()
 
